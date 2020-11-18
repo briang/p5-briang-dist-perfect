@@ -22,7 +22,7 @@ jobs:
     #   runners of GitHub Actions.
     # - The other indicates version numbers of perl.
     # The words "os" and "perl" are free text here, they are like
-    # variable names.  GitHub Action will run the job on 3x2 = 6
+    # variable names. GitHub Action will run the job on 3x2 = 6
     # different setups
     strategy:
       matrix:
@@ -38,7 +38,7 @@ jobs:
 
     # we will have several steps
     steps:
-      # check out the current repository to the runner.  This setp did
+      # check out the current repository to the runner. This setup did
       # not get a nice "name"
       - uses: actions/checkout@v2
 
@@ -60,8 +60,8 @@ jobs:
       - run: cpanm --installdeps .
       - run: prove -lv t
 
-      # Surprisingly, this does not use the Build.PL script that is used by the module
-      # I'd probably write
+      # Surprisingly, this does not use the Build.PL script that is
+      # used by the module. I'd probably write
       # - run: |
       #     perl Build.PL
       #     perl Build
