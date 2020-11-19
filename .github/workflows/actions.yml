@@ -1,5 +1,5 @@
 # Optional, but good to give a name
-name: CI
+name: tests
 
 # This means the workflow will be triggered
 # - on push to main branch
