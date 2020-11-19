@@ -10,7 +10,7 @@ my $min_perl     = '5.10.1';
 (my $dist_name    = $module) =~ s/::/-/g;                      # BRIANG-Dist-Perfect
 my $github_name   = sprintf 'p5-%s', lc $dist_name;            # p5-briang-dist-perfect
 
-WriteMakefile(
+my %WriteMakefileArgs = (
     NAME             => $module,
     AUTHOR           => 'Brian Greenfield <briang@cpan.org>',
     VERSION_FROM     => $path_to_main,
@@ -26,7 +26,7 @@ WriteMakefile(
     },
     TEST_REQUIRES      => {
         'Test::Exception' => 0,
-        'Test::More'      => 0,
+        'Test::More'      => '0.22',
     },
     PREREQ_PM => {
         'Exporter' => 0,
@@ -51,3 +51,47 @@ WriteMakefile(
         },
     },
 );
+
+my $eumm_version  = eval $ExtUtils::MakeMaker::VERSION;
+
+for (qw(configure build test runtime)) {
+  my $key = $_ eq 'runtime' ? 'PREREQ_PM' : uc $_.'_REQUIRES';
+  next unless exists $WriteMakefileArgs{META_ADD}{prereqs}{$_}
+           or exists $WriteMakefileArgs{$key};
+  my $r = $WriteMakefileArgs{$key} = {
+    %{$WriteMakefileArgs{META_ADD}{prereqs}{$_}{requires} || {}},
+    %{delete $WriteMakefileArgs{$key} || {}},
+  };
+  defined $r->{$_} or delete $r->{$_} for keys %$r;
+}
+
+# dynamic prereqs get added here.
+
+$WriteMakefileArgs{MIN_PERL_VERSION} = delete $WriteMakefileArgs{PREREQ_PM}{perl} || 0;
+
+die 'attention developer: you need to do a sane meta merge here!'
+  if keys %{$WriteMakefileArgs{BUILD_REQUIRES}};
+
+$WriteMakefileArgs{BUILD_REQUIRES} = {
+    %{$WriteMakefileArgs{BUILD_REQUIRES} || {}},
+    %{delete $WriteMakefileArgs{TEST_REQUIRES}}
+} if $eumm_version < 6.63_03;
+
+$WriteMakefileArgs{PREREQ_PM} = {
+    %{$WriteMakefileArgs{PREREQ_PM}},
+    %{delete $WriteMakefileArgs{BUILD_REQUIRES}}
+} if $eumm_version < 6.55_01;
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  if $eumm_version < 6.51_03;
+
+delete $WriteMakefileArgs{MIN_PERL_VERSION}
+  if $eumm_version < 6.48;
+
+delete @WriteMakefileArgs{qw(META_ADD META_MERGE)}
+  if $eumm_version < 6.46;
+
+delete $WriteMakefileArgs{LICENSE}
+  if $eumm_version < 6.31;
+
+WriteMakefile(%WriteMakefileArgs);
