@@ -25,9 +25,14 @@ WriteMakefile(
         # 'Inline::C' => '0'
     },
     TEST_REQUIRES      => {
-        'Test::Most' => '0',
+        'Test::Exception' => 0,
+        'Test::More'      => 0,
     },
     PREREQ_PM => {
+        'Exporter' => 0,
+        'parent'   => 0,
+        'strict'   => 0,
+        'warnings' => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => "$dist_name-*" },
