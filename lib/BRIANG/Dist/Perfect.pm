@@ -187,27 +187,34 @@ sub peek { shift->{count} }
 
 Copyright 2020 Brian Greenfield <briang at cpan dot org>
 
-This library is free software. You can use it, redistribute it and/or
+This library is free software. You can use, redistribute, and/or
 modify it under the terms laid in the L<MIT licence|LICENCE>.
 
 =head1 SEE ALSO
 
 L<CPAN::Meta::Spec>
 
+L<ExtUtils::MakeMaker>
+
 L<Release::Checklist>
 
-L<ExtUtils::MakeMaker>
+L<Github Actions for Perl running on Windows, Mac OSX, and Ubuntu
+Linux|https://perlmaven.com/github-actions-running-on-3-operating-systems>
+by Gabor Szabo
 
 TODO: others?
 
 =head1 CODE REPOSITORY AND ISSUE REPORTING
 
-The source distribution of this project is
-L<hosted|https://github.com/briang/p5-briang-dist-perfect>
-on L<GitHub.com|http://github.com>.
+This project's source code is
+L<hosted|https://github.com/briang/p5-briang-dist-perfect> on
+L<GitHub.com|http://github.com>.
 
 Issues should be reported using the project's GitHub L<issue
 tracker|https://github.com/briang/p5-briang-dist-perfect/issues>.
+
+Contributions are welcome. Please use L<GitHub Pull
+Requests|https://github.com/briang/p5-briang-dist-perfect/pulls>.
 
 =head1 TODO: more pod???
 
