@@ -17,7 +17,7 @@ if (0) {
     diag($_), $_->() for grep { /^test_/ } keys %::
 }
 ################################################################################
-use Test::More qw(no_plan);
+use Test::More;
 
 # use Data::Dump;
 
