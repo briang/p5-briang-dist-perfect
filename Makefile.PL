@@ -94,4 +94,21 @@ delete @WriteMakefileArgs{qw(META_ADD META_MERGE)}
 delete $WriteMakefileArgs{LICENSE}
   if $eumm_version < 6.31;
 
+sub MY::postamble {
+    my $extra_targets = join "\n", (
+        '.PHONY: alltests xtests trial',
+        'trial: dist',
+        '    mv $(DISTVNAME).tar$(SUFFIX) $(DISTVNAME)-TRIAL.tar$(SUFFIX)',
+        '',
+        'xtests:',
+        '    prove -l xt',
+        '',
+        'alltests:',
+        '    prove -l t xt',
+    );
+    $extra_targets =~ s{^[ \t]+}{\t}gm;
+
+    return $extra_targets;
+}
+
 WriteMakefile(%WriteMakefileArgs);
