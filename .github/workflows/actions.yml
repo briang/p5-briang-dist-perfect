@@ -27,7 +27,7 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-        perl: [ '5.12', 'latest' ]
+        perl: [ '5.14', 'latest' ]
 
     # Using the value from the matrix above we select the platform
     # (operating system) to run on
