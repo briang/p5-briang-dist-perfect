@@ -7,7 +7,8 @@ use warnings;
 
 =head1 NAME
 
-BRIANG::Dist::Perfect - A perfect distribution for a perfect year. Or perhaps not.
+BRIANG::Dist::Perfect - A perfect distribution for a perfect year. Or
+perhaps not.
 
 =head1 VERSION
 
@@ -58,7 +59,7 @@ I intend this distribution to follow every Perl best practice I
 can. There is a L<section below|/SEE ALSO> with an exhaustive
 collection of documentation.
 
-This "dummy" module imnplements a counter accessible through a
+This "dummy" module implements a counter accessible through a
 functional or object-oriented interface.
 
 B<Important note regarding the functional interface>
@@ -144,11 +145,11 @@ sub view { $__count }
 
 =head2 new
 
-    $counter = new($initial_value)
+    $counter = BRIANG::Dist::Perfect->new($initial_value)
 
-Initialises a new counter object, and returns it. The optional
-argument C<$initial_value> sets an initial value for the counter. A
-value of zero is used if the argument is omitted.
+Initialises a new counter object, and returns it. C<$initial_value> is
+optional and is used to set an initial value for the counter. Zero is
+used if the argument is omitted.
 
 =cut
 
