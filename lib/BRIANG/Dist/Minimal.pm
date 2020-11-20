@@ -28,7 +28,10 @@ our $VERSION = '0.1.0';
 
 =head1 DESCRIPTION
 
-This module halves numbers using an object-oriented interface.
+This module is a component from the C<BRIANG::Dist::Perfect>
+distribution.
+
+This module uses an object-oriented approach to half numbers.
 
 =head1 CONSTRUCTOR
 
@@ -37,7 +40,7 @@ This module halves numbers using an object-oriented interface.
     $object = BRIANG::Dist::Minimal->new($value)
 
 Initialises a new C<BRIANG::Dist::Minimal> object, and returns
-it. C<$value> sets the number to be halfed.
+it. C<$value> sets the number to be halved.
 
 =cut
 
@@ -62,8 +65,8 @@ sub value { shift->{value} }
 
 Copyright 2020 Brian Greenfield <briang at cpan dot org>
 
-This library is free software. You can use, redistribute, and/or
-modify it under the terms laid in the L<MIT licence|LICENCE>.
+This is free software. You can use, redistribute, and/or modify it
+under the terms laid out in the L<MIT licence|LICENCE>.
 
 =head1 CODE REPOSITORY AND ISSUE REPORTING
 

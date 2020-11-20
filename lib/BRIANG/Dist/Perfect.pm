@@ -52,6 +52,9 @@ our $VERSION = '0.1.0';
 
 =head1 DESCRIPTION
 
+This module is the principal component from the
+C<BRIANG::Dist::Perfect> distribution.
+
 What a wonderful year 2020 has been, and to cap it off, here's my
 perfect distribution.
 
@@ -188,8 +191,8 @@ sub peek { shift->{count} }
 
 Copyright 2020 Brian Greenfield <briang at cpan dot org>
 
-This library is free software. You can use, redistribute, and/or
-modify it under the terms laid in the L<MIT licence|LICENCE>.
+This is free software. You can use, redistribute, and/or modify it
+under the terms laid out in the L<MIT licence|LICENCE>.
 
 =head1 SEE ALSO
 
