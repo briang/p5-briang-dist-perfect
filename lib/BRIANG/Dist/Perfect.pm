@@ -17,7 +17,7 @@ released 2020-11-17
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.1.0';
 
 =head1 SYNOPSIS
 
