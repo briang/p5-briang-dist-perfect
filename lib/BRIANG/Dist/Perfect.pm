@@ -13,12 +13,12 @@ perhaps not.
 =head1 VERSION
 
 This is
-version 0.1.0
+version 0.0100
 released 2020-11-17
 
 =cut
 
-our $VERSION = '0.1.0';
+our $VERSION = '0.0100';
 
 =head1 SYNOPSIS
 
