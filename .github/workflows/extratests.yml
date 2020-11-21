@@ -58,7 +58,9 @@ jobs:
       #   - Run prove to execute the tests
       - run: perl -V
       - run: cpanm --installdeps .
-      - run: cpanm < xt/prereqs
+      - run: cpanm FindBin lib Test::CPAN::Changes Test::More Test::Pod
+      - run: cpanm Test::Pod::Coverage Test::Synopsis Test::Version
+        # Test::Prereq FAILS
       - run: prove -lv xt/*.t
 
       # Surprisingly, this does not use the Build.PL script that is
