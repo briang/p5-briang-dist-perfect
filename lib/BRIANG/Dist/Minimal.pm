@@ -13,7 +13,7 @@ BRIANG::Dist::Minimal - A minimal implementation.
 
 This is
 version 0.0100
-released 2020-11-20
+released 2020-11-19
 
 =cut
 
