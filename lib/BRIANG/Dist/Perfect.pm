@@ -13,8 +13,8 @@ perhaps not.
 =head1 VERSION
 
 This is
-version 0.0100
-released 2020-11-19
+version 0.0101
+released 2020-11-21
 
 =cut
 
