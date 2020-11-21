@@ -58,7 +58,7 @@ jobs:
       #   - Run prove to execute the tests
       - run: perl -V
       - run: cpanm --installdeps .
-      - run: prove -lv t
+      - run: prove -lv t/*.t
 
       # Surprisingly, this does not use the Build.PL script that is
       # used by the module. I'd probably write
