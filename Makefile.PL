@@ -113,6 +113,8 @@ sub MY::postamble {
 
 WriteMakefile(%WriteMakefileArgs);
 
-if (eval "require Data::" . "Dump; 1") {
-    Data::Dump::dd( \%WriteMakefileArgs );
+my $dd = 'Data::' . 'Dump';
+if (eval "require $dd; 1") {
+    no strict 'refs';
+    "${dd}::dd"->( \%WriteMakefileArgs );
 }
