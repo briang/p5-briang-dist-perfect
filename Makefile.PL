@@ -67,7 +67,7 @@ for (qw(configure build test runtime)) {
 
 # dynamic prereqs get added here.
 
-$WriteMakefileArgs{MIN_PERL_VERSION} = delete $WriteMakefileArgs{PREREQ_PM}{perl} || 0;
+# $WriteMakefileArgs{MIN_PERL_VERSION} = delete $WriteMakefileArgs{PREREQ_PM}{perl} || 0;
 
 die 'attention developer: you need to do a sane meta merge here!'
   if keys %{$WriteMakefileArgs{BUILD_REQUIRES}};
