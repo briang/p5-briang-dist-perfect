@@ -96,7 +96,7 @@ delete $WriteMakefileArgs{LICENSE}
 
 sub MY::postamble {
     my $extra_targets = join "\n", (
-        '.PHONY: alltests xtests trial',
+        '.PHONY: alltests xtests trial coverage',
         'trial: dist',
         '    mv $(DISTVNAME).tar$(SUFFIX) $(DISTVNAME)-TRIAL.tar$(SUFFIX)',
         '',
@@ -105,6 +105,8 @@ sub MY::postamble {
         '',
         'alltests:',
         '    prove -l t xt',
+        '',
+        qx(which cover) ? ( 'coverage:', '  cover -test' ) : ()
     );
     $extra_targets =~ s{^[ \t]+}{\t}gm;
 
