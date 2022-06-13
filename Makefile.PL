@@ -6,7 +6,7 @@ use warnings;
 use ExtUtils::MakeMaker 6.48; # MIN_PERL_VERSION
 
 my $module       = 'BRIANG::Dist::Perfect';
-my $min_perl     = '5.10.1';
+my $min_perl     = '5.14.0'; # s///r modifier
 
 (my $path_to_main = sprintf 'lib/%s.pm', $module) =~ s|::|/|g; # lib/BRIANG/Dist/Perfect.pm
 (my $dist_name    = $module) =~ s/::/-/g;                      # BRIANG-Dist-Perfect
