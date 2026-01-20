@@ -6,12 +6,13 @@ use warnings;
 
 use ExtUtils::MakeMaker 6.48; # MIN_PERL_VERSION
 
-my $module       = 'BRIANG::Dist::Perfect';
-my $min_perl     = '5.14.0';
+my $module        = 'BRIANG::Dist::Perfect';
+my $github_prefix = 'p5-';
+my $min_perl      = '5.14.0';
 
 (my $path_to_main = "lib/$module.pm") =~ s|::|/|g; # lib/BRIANG/Dist/Perfect.pm
 (my $dist_name    = $module) =~ s/::/-/g;          # BRIANG-Dist-Perfect
-my $github_name  = "p5-\L$dist_name";              # p5-briang-dist-perfect
+my $github_name   = "$github_prefix\L$dist_name";  # p5-briang-dist-perfect
 
 my %WriteMakefileArgs = (
     NAME             => $module,
