@@ -40,7 +40,7 @@ jobs:
     steps:
       # check out the current repository to the runner. This setup did
       # not get a nice "name"
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Using the action from this repository:
       # https://github.com/shogo82148/actions-setup-perl/
