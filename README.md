@@ -4,3 +4,5 @@
     https://github.com/[USER]/[REPO]/workflows/[ACTION-NAME]/badge.svg
 -->
 # BRIANG::Dist::Perfect
+
+A Perl template for a CPAN distibution
