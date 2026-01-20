@@ -20,22 +20,27 @@ my %WriteMakefileArgs = (
     LICENSE          => 'MIT',
     PL_FILES         => {},
     MIN_PERL_VERSION => $min_perl,
-    CONFIGURE_REQUIRES => {
+
+    CONFIGURE_REQUIRES => { # needed to run `perl Makefile.PL`
         'ExtUtils::MakeMaker' => '6.48',
     },
-    BUILD_REQUIRES     => {
+
+    BUILD_REQUIRES     => { # needed to run `make`
         # 'Inline::C' => '0'
     },
-    TEST_REQUIRES      => {
+
+    TEST_REQUIRES      => { # needed to run `make test` or `prove -l`
         'Test::Exception' => 0,
         'Test::More'      => '0.22',
     },
-    PREREQ_PM => {
+
+    PREREQ_PM => { # needed to `use` the module
         'Exporter' => 0,
         'parent'   => 0,
         'strict'   => 0,
         'warnings' => 0,
     },
+
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => "$dist_name-*" },
     META_MERGE         => {
