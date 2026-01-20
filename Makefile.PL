@@ -113,7 +113,10 @@ sub MY::postamble {
         'alltests:',
         '    prove -l t xt',
         '',
-        qx(which cover) ? ( 'coverage:', '  cover -test' ) : ()
+        qx(which cover) ? ( 'coverage:',
+                            '  cover -delete',
+                            '  HARNESS_PERL_SWITCHES=-MDevel::Cover make test',
+                            '  cover -test' ) : ()
     );
     $extra_targets =~ s{^[ \t]+}{\t}gm;
 
